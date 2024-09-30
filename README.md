@@ -74,20 +74,18 @@ python app.py
 
 ### 5. Test the API
 
-The API will be available at `http://127.0.0.1:5000/predict`. You can test it by sending a POST request with either a URL or the raw text content of a news article.
+You can use the following PowerShell command to test the API:
 
-#### Example Request
-
-```json
-{
-  "content": "Sample text"
-}
+```powershell
+(Invoke-WebRequest -Uri "http://localhost:5000/predict" -Method Post -Headers @{"Content-Type"="application/json"} -Body (ConvertTo-Json @{content="Sample text."})).Content | ConvertFrom-Json | Select-Object -ExpandProperty bias
 ```
 
-#### Example Response
+This command sends a POST request to the API with the content "Sample text." and outputs the predicted bias.
 
-```json
-{
-  "bias": "Center"
-}
-```
+To use this command:
+1. Open PowerShell
+2. Copy and paste the command
+3. Replace "Sample text." with your desired news article text
+4. Press Enter to execute
+
+The command will output the predicted bias: "Left", "Center", or "Right".
