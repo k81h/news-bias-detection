@@ -6,7 +6,7 @@ This project provides an API that classifies news articles as "Left", "Center", 
 
 - Accepts either raw text content or a URL to a news article.
 - Predicts the political bias of the article.
-  
+
 ## Project Structure
 
 ```
@@ -21,27 +21,62 @@ news-bias-detection/
 
 ## How to Run the Project
 
-1. Clone the repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/news-bias-detection.git
+cd news-bias-detection
 ```
 
-2. Install dependencies:
+### 2. Set Up a Virtual Environment
+
+Setting up a virtual environment ensures that all dependencies are installed in an isolated environment, avoiding conflicts with other projects.
+
+- **Create a virtual environment**:
+  
+  On Windows:
+  ```bash
+  python -m venv venv
+  ```
+
+  On macOS/Linux:
+  ```bash
+  python3 -m venv venv
+  ```
+
+- **Activate the virtual environment**:
+
+  On Windows:
+  ```bash
+  venv\Scripts\activate
+  ```
+
+  On macOS/Linux:
+  ```bash
+  source venv/bin/activate
+  ```
+
+### 3. Install Dependencies
+
+With the virtual environment activated, install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the Flask app:
+### 4. Run the Flask App
+
+After installing the dependencies, run the Flask app:
 
 ```bash
 python app.py
 ```
 
-4. Test the API by sending a POST request to `http://127.0.0.1:5000/predict` with either a URL or content.
+### 5. Test the API
 
-## Example Request
+The API will be available at `http://127.0.0.1:5000/predict`. You can test it by sending a POST request with either a URL or the raw text content of a news article.
+
+#### Example Request
 
 ```json
 {
@@ -49,7 +84,7 @@ python app.py
 }
 ```
 
-## Example Response
+#### Example Response
 
 ```json
 {
