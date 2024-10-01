@@ -24,7 +24,7 @@ news-bias-detection/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/news-bias-detection.git
+git clone https://github.com/k81h/news-bias-detection
 cd news-bias-detection
 ```
 
