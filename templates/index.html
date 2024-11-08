@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Bias Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #9c9c9c;
+      }
+      .result {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>News Bias Prediction</h1>
+      <p>
+        Enter the content of a news article, and this app will predict its bias
+        (Left, Center, or Right).
+      </p>
+
+      <form method="POST" action="/predict">
+        <textarea name="news_content" placeholder="Enter news content here...">
+{{ news_content }}</textarea
+        ><br />
+        <button type="submit">Predict Bias</button>
+      </form>
+
+      {% if prediction %}
+      <div class="result">
+        <p>The predicted bias is: <strong>{{ prediction }}</strong></p>
+      </div>
+      {% endif %} {% if error %}
+      <div class="error">
+        <p>{{ error }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
